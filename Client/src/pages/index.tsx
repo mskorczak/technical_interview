@@ -32,6 +32,7 @@ export default function Home() {
     };
 	
     const validatePasswordLength = (password: string) => {
+	// check if all of the characters between the start and end of the password add to 7-14 characters
 	const regex = new RegExp('^.{7,14}$');
 	return regex.test(password);
     };
@@ -78,7 +79,6 @@ export default function Home() {
 			setPasswordChangeStatus(false);
 		}
 	}
-	// need to handle the response back
     }
 
     return (
