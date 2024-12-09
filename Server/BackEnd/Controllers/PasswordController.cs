@@ -14,8 +14,7 @@ public class PasswordController : ControllerBase
     public PasswordController(ILogger<PasswordController> logger, IPasswordService passwordService)
     {
         _logger = logger;
-        _passwordService = passwordService;
-        _passwordService.LoadCommonPasswords("Data/common-passwords.txt");
+        _passwordService = new PasswordService("Data/common-passwords.txt");
     }
 
     [HttpPost("change")]
