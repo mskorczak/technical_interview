@@ -4,7 +4,9 @@ namespace back_end.Services;
 
 public class PasswordService : IPasswordService
 {
-    
+    // Since we can do pre-processing on startup, sticking the common passwords into a tree should cut the search time
+    // down by a lot, no more searching through 6456 common passwords before getting to 'password123!'!
+    // After the first step we go down to about 150 possible passwords which will more or less be instant after that!
     
      private class PasswordTreeNode {
         
